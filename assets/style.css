@@ -1,0 +1,71 @@
+:root {
+  --duration: 250ms;
+  --delay: 125ms;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  background-color: #1e2326;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
+body::before {
+  --size: 60px;
+  --line: hsl(216 3% 75% / 0.15);
+  content: '';
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  background: linear-gradient(90deg,
+      var(--line) 1px,
+      transparent 1px var(--size)) 50% 50% / var(--size) var(--size),
+    linear-gradient(var(--line) 1px, transparent 1px var(--size)) 50% 50% / var(--size) var(--size);
+  mask: linear-gradient(-15deg, transparent 30%, white);
+  top: 0;
+  transform-style: flat;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.container {
+  height: 5rem;
+  width: 5rem;
+  background-color: #1e2326;
+  border-radius: 1rem;
+  border: none;
+  transition-property: width background-color border;
+  transition-duration: var(--duration);
+  transition-delay: var(--delay);
+}
+
+.arrow {
+  --magic-arrow-radius: 0.125rem;
+  height: 1.25rem;
+  width: 1.25rem;
+  display: inline-block;
+  border-style: solid;
+  border-color: #efefef;
+  border-width: 0 0.25rem 0.25rem 0;
+  transform: rotate(45deg);
+  border-top-right-radius: var(--magic-arrow-radius);
+  border-bottom-right-radius: var(--magic-arrow-radius);
+  border-bottom-left-radius: var(--magic-arrow-radius);
+  transition-property: transform margin;
+  transition-duration: var(--duration);
+  transition-delay: 50ms;
+}
+
+.container:hover {
+  width: 8rem;
+  background-color: transparent;
+  border-left: solid 4px #697a84;
+  border-right: solid 4px #697a84;
+}
+
+.container:hover .arrow {
+  margin-top: 0.5rem;
+  transform: rotate(225deg);
+}
