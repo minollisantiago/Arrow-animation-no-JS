@@ -2,11 +2,11 @@
 
 ### Links:
 
-[Codepen](https://codepen.io/minollisantiago/pen/KKYRqqw)
+- [Codepen](https://codepen.io/minollisantiago/pen/KKYRqqw)
 
 **Inspired by these two pens:**
-[Hyperplexed pen](https://codepen.io/Hyperplexed/pen/zYWvXMM)
-[jhey pen](https://codepen.io/jh3y/pen/GRLQjXE)
+- [Hyperplexed pen](https://codepen.io/Hyperplexed/pen/zYWvXMM)
+- [jhey pen](https://codepen.io/jh3y/pen/GRLQjXE)
 
 ### Hyperplexed video:
 [![Video](https://img.youtube.com/vi/bAwEj_mSzOs/maxresdefault.jpg)](https://www.youtube.com/watch?v=bAwEj_mSzOs&list=PL4UMjyVQYX-GeRcIIT5gui7c3LmydEYZS&index=14)
@@ -64,6 +64,18 @@ The `background` property is a bit complex as it layers two linear gradients to 
 
 ### Mask
 - `mask: linear-gradient(-15deg, transparent 30%, white);`: Applies a masking effect where the gradient starts transparent and becomes opaque. This creates an interesting fade effect on the grid pattern, with the gradient angle at -15 degrees creating a diagonal transition.
+
+### Background Position and Size Syntax
+The syntax `(50% 50% / var(--size) var(--size))` in the context of the CSS `background` property is a shorthand for two separate things: **background position** and **background size**.
+
+#### Background Position (50% 50%)
+This specifies the initial position of the background image (in this case, the linear gradient pattern). The first value (`50%`) sets the horizontal position of the background image's center relative to the element, and the second value (`50%`) sets the vertical position. Essentially, `50% 50%` centers the background in both dimensions within the element (or viewport, since it's applied to a pseudo-element sized to cover the viewport). This means the center of the gradient is placed in the center of the element.
+
+#### Background Size (var(--size) var(--size))
+This part comes after the slash (`/`) and defines the size of the background image. The first value after the slash sets the width of the background image, and the second sets the height. In this case, both are set to `var(--size)`, a custom property defined earlier as `60px`. Therefore, each repetition of the gradient pattern is `60px` wide and `60px` tall. This creates a uniform grid where each cell is a `60px` by `60px` square.
+
+### Summary
+Putting it all together, `(50% 50% / var(--size) var(--size))` centers the grid pattern in the middle of the element and repeats it in both directions, with each cell of the grid being a square of size `60px` by `60px`. This ensures that the pattern is evenly distributed across the element, starting from its center and expanding outward, creating a consistent, repeating grid pattern.
 
 ### Miscellaneous
 - `transform-style: flat;`: Specifies that children of the pseudo-element (though there are none in this case) do not exist in a 3D space.
