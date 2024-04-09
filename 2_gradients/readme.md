@@ -1,3 +1,3 @@
 ## Gradient grid
 
-[Codepen](https://codepen.io/minollisantiago/pen/QWjzNRX)
+[Codepen](https://codepen.io/minollisantiago/pen/KKYRqqw)
