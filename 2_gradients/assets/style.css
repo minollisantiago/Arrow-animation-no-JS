@@ -20,6 +20,7 @@ body::before {
       var(--line) var(--line-w),
       var(--tiles) 1px var(--size)) 50% 50% / var(--size) var(--size),
     linear-gradient(var(--line) var(--line-w), var(--tiles) 1px var(--size)) 50% 50% / var(--size) var(--size);
+  mask: linear-gradient(-15deg, transparent 30%, white);
   transform-style: flat;
   pointer-events: none;
 }
