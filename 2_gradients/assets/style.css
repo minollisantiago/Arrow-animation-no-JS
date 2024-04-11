@@ -3,12 +3,12 @@ body {
   height: 100vh;
   display: grid;
   place-content: center;
-  background-color: #1e2326;
+  background: #1e2326;
 }
 
 body::before {
   --size: 60px;
-  --line-w: 2px;
+  --line-w: 1px;
   --line: hsl(216 3% 75% / 0.15);
   --tiles: transparent;
   content: '';
@@ -20,7 +20,7 @@ body::before {
       var(--line) var(--line-w),
       var(--tiles) 1px var(--size)) 50% 50% / var(--size) var(--size),
     linear-gradient(var(--line) var(--line-w), var(--tiles) 1px var(--size)) 50% 50% / var(--size) var(--size);
-  mask: linear-gradient(-15deg, transparent 30%, white);
+  mask: radial-gradient(circle, white 10%, transparent 50%);
   transform-style: flat;
   pointer-events: none;
 }
